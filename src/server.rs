@@ -4,12 +4,12 @@ use std::{
 };
 
 pub struct Server<I, S> {
-    incoming: I,
-    make_service: S,
+    pub incoming: I,
+    pub make_service: S,
 }
 
 pub struct Builder<I> {
-    incoming: I,
+    pub incoming: I,
 }
 
 impl<I> Server<I, ()> {
@@ -30,8 +30,8 @@ impl Server<AddrIncoming, ()> {
 }
 
 pub struct AddrIncoming {
-    addr: SocketAddr,
-    listener: TcpListener,
+    pub addr: SocketAddr,
+    pub listener: TcpListener,
 }
 
 impl AddrIncoming {
